@@ -12,12 +12,25 @@ addNewList.addEventListener('click', ()=>{
 function makeCard(name){
 
 }
-
+var cardIndex = 0;
+function temple(name){
+    this.name=name;
+    var temp = document.getElementById("cardTemp");
+    var cardTitle = document.createTextNode(this.name);
+    temp.querySelector("h2").appendChild(cardTitle);
+}
 function addMasterItem(){
     var listName= document.getElementById("listName").value;
-    masterList.push(listName);
-    var cardTemp = document.getElementById("title")
-    cardTemp.innerHTML=masterList[0];   
+    var blur = document.getElementById("main-page");
+    blur.classList.remove('blurClass');
+//     masterList.push(listName);
+//     var cardTemp = document.getElementById("title")
+//     cardTemp.innerHTML=masterList[cardIndex];   
+//     cardIndex+=1;
+    popUp.style.display="none";
+//     blur.classList.remove('blurClass');
+// 
+    temple(listName) ;
 }
 
 

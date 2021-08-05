@@ -93,3 +93,24 @@ svg{
 .blurClass{
     filter: blur(4px);
 }
+
+/* card css */
+.card1{
+    position: relative;
+    height: 50vh;
+    width: 25vw;
+    border-radius: 9px;
+    border: 1px solid red;
+    box-shadow: 8px 8px 8px lightgrey;
+    text-align:center;
+    padding-top: 1%;
+    text-align: start; 
+    margin-top: 5%;
+}
+.bi-plus-circle-fill{
+    height: 11%;
+    width: 9%;
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+}
