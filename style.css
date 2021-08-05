@@ -27,10 +27,9 @@ body{
 }
 
 .container{
-    margin: 25%;
+    margin: auto;
     margin-top: 0;
-    
-    height: 50vh;
+    height: fit-content;
     width: 50vw;
 }
 h1{
@@ -39,7 +38,7 @@ h1{
 }
 svg{
     color: rgba(72, 255, 0, 0.919);
-    width: 9%;
+    width: 4%;
     height: 9%;
     
 }
@@ -97,20 +96,39 @@ svg{
 /* card css */
 .card1{
     position: relative;
-    height: 50vh;
-    width: 25vw;
+    display: inline-block;
+    height: 46vh;
+    width: 18vw;
     border-radius: 9px;
     border: 1px solid red;
     box-shadow: 8px 8px 8px lightgrey;
     text-align:center;
     padding-top: 1%;
-    text-align: start; 
-    margin-top: 5%;
+   
+    
 }
 .bi-plus-circle-fill{
     height: 11%;
     width: 9%;
+    
+}
+.bi-trash-fill{
+    width: 9%;
+    height: 9%;
+    margin-right: 1%;
+}
+.cardButtons{
     position: absolute;
     right: 12px;
     bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+/* Displaying Added Cards */
+.allCards{
+    height: 80vh;
+    width: 80vw;
+    margin: auto;
 }

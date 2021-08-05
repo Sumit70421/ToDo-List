@@ -2,6 +2,15 @@
 
 var masterList= [];
 var addNewList= document.querySelector("span#addlist")
+// Rendering the First Page 
+function renderPage(){
+    if(masterList.length===0){
+        document.getElementById("emptyMsg").style.display="block";
+    }
+    else{
+        document.getElementById("emptyMsg").style.display="none";
+    }
+}
 // adding new list 
 addNewList.addEventListener('click', ()=>{
     var blur = document.getElementById("main-page");
@@ -23,7 +32,7 @@ function addMasterItem(){
     var listName= document.getElementById("listName").value;
     var blur = document.getElementById("main-page");
     blur.classList.remove('blurClass');
-//     masterList.push(listName);
+    masterList.push(listName);
 //     var cardTemp = document.getElementById("title")
 //     cardTemp.innerHTML=masterList[cardIndex];   
 //     cardIndex+=1;
@@ -31,6 +40,7 @@ function addMasterItem(){
 //     blur.classList.remove('blurClass');
 // 
     temple(listName) ;
+    renderPage();
 }
 
 
