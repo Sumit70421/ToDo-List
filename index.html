@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap" rel="stylesheet">
     </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-page">
         <!-- important Rendering components  -->
         <div class="heading permanent">
           <h1 id="task">Tasks</h1>&nbsp;<h1 id="list">Lists </h1>     <span id="addlist"><p id="addlss"><svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
@@ -27,11 +27,26 @@
         </div>    
          <!-- temporary rendoring -->  
         <div class="emptylist">No items added yet. Click on Add lists to get started.</div>
+        <!-- Div that shows the list after creation  -->
+        <div class="allCards"></div>
 
     </div>
-        
-        
-    
+    <!-- Pop Up for adding new list to master list  -->
+    <div class="maincon" id="popUp">
+      <p class="addnew">Add New List</p>
+      <input type="text" class="empty" id="listName">
+      <button class="but" onclick="addMasterItem()">ADD</button>
+    </div>   
+    <!-- card template  -->
+    <div id="cardTemp"><div class="card1"><h2 id="title"></h2>  <hr id="cardhr">
+      <div class="plus">
+        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+        </svg>
+      </div>    
+    </div>
+  </div>
+      
 
 </body>
 <script src="./todo.js"></script>
