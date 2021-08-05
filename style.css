@@ -1,0 +1,51 @@
+/* Index starting page */
+body{
+    background-color: black;
+    color: lightgrey;
+}
+.heading{
+    height: 10vh;
+    font-size: 48px;
+    display: inline;
+}
+#task{
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 900;
+}
+#list{
+    font-family: 'Roboto', sans-serif;
+    color: #999898;
+    font-weight: 20;
+}
+#addlss{
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 38%;
+    display: inline;
+    cursor: pointer;
+}
+
+.container{
+    margin: 25%;
+    margin-top: 0;
+    
+    height: 50vh;
+    width: 50vw;
+}
+h1{
+    font-size: 48px;
+    display: inline-block;
+}
+svg{
+    color: rgba(72, 255, 0, 0.919);
+    width: 9%;
+    height: 9%;
+    
+}
+
+/* temporary element */
+.emptylist{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4em;
+}
