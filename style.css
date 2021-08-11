@@ -103,8 +103,7 @@ svg{
     border: 1px solid red;
     box-shadow: 8px 8px 8px lightgrey;
     text-align:center;
-    padding-top: 1%;
-   
+    padding-top: 1%; 
     
 }
 .bi-plus-circle-fill{
@@ -125,10 +124,14 @@ svg{
     justify-content: flex-end;
     align-items: flex-end;
 }
+/* Hiding the template of card */
 
 /* Displaying Added Cards */
 .allCards{
     height: 80vh;
     width: 80vw;
     margin: auto;
+    display: flex !important;
+    justify-content: space-around;
+
 }
