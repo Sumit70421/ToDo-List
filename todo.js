@@ -22,6 +22,12 @@ function makeCard(name){
 
 }
 var cardIndex = 0;
+function clearCard(){
+
+}
+
+// Adding new card and displaying it in the mainlist 
+
 function createCard(name){
     var template = document.getElementById("cardTemp");
     var cardTitle = document.createTextNode(name);
@@ -29,6 +35,7 @@ function createCard(name){
     var innerHtml1= template.innerHTML;
     console.log(innerHtml1);
     document.getElementById("cardList").innerHTML+= innerHtml1; 
+    clearCard();
 }
 
 // function for creating heading
