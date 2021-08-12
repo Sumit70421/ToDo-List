@@ -2,6 +2,7 @@
 
 var masterList= [];
 var addNewList= document.querySelector("span#addlist")
+
 // Rendering the First Page 
 function renderPage(){
     if(masterList.length===0){
@@ -29,12 +30,13 @@ function clearCard(){
 // Adding new card and displaying it in the mainlist 
 
 function createCard(name){
-    var template = document.getElementById("cardTemp");
     var cardTitle = document.createTextNode(name);
+    var template = document.getElementById("cardTemp");
     template.querySelector("h2").appendChild(cardTitle); 
     var innerHtml1= template.innerHTML;
     console.log(innerHtml1);
     document.getElementById("cardList").innerHTML+= innerHtml1; 
+    template.querySelector("h2").removeChild(cardTitle);
     clearCard();
 }
 
