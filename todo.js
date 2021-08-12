@@ -2,6 +2,7 @@
 
 var masterList= [];
 var addNewList= document.querySelector("span#addlist")
+var deleteCard = document.querySelector("#delete");
 
 // Rendering the First Page 
 function renderPage(){
@@ -19,13 +20,14 @@ addNewList.addEventListener('click', ()=>{
     var popUp = document.getElementById("popUp")
     popUp.style.display="flex";
 })
-function makeCard(name){
-
+// deleting card 
+if(deleteCard){
+    deleteCard.addEventListener('click',()=>{
+    document.body.childNodes[5].childNodes[0].style.display="none";
+})
 }
-var cardIndex = 0;
-function clearCard(){
 
-}
+var cardIndex = 1;
 
 // Adding new card and displaying it in the mainlist 
 
@@ -34,10 +36,12 @@ function createCard(name){
     var template = document.getElementById("cardTemp");
     template.querySelector("h2").appendChild(cardTitle); 
     var innerHtml1= template.innerHTML;
-    console.log(innerHtml1);
     document.getElementById("cardList").innerHTML+= innerHtml1; 
+    var cardID = "card" + cardIndex;
+    console.log(cardIndex)
+    cardIndex+=1;
+    template.classList.add(cardID);
     template.querySelector("h2").removeChild(cardTitle);
-    clearCard();
 }
 
 // function for creating heading
