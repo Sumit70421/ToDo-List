@@ -21,12 +21,14 @@ addNewList.addEventListener('click', ()=>{
     popUp.style.display="flex";
 })
 // deleting card 
-if(deleteCard){
-    deleteCard.addEventListener('click',()=>{
-    document.body.childNodes[5].childNodes[0].style.display="none";
-})
+function deleteFunction(num){
+    const del= "delete" + num;
+    if(document.getElementById(del)){
+        document.getElementById(del).style.display='none';
+    }
+    
+    
 }
-
 var cardIndex = 1;
 
 // Adding new card and displaying it in the mainlist 
@@ -35,20 +37,18 @@ function createCard(name){
     var cardTitle = document.createTextNode(name);
     var template = document.getElementById("cardTemp");
     template.querySelector("h2").appendChild(cardTitle); 
-    var innerHtml1= template.innerHTML;
-    document.getElementById("cardList").innerHTML+= innerHtml1; 
     var cardID = "card" + cardIndex;
+    var deleteID= "delete"+cardIndex;
+    var strFunctionDel = 'deleteFunction('+cardIndex+')';
     console.log(cardIndex)
     cardIndex+=1;
-    template.classList.add(cardID);
+    template.querySelector('.card').setAttribute('id',deleteID);
+    template.querySelector('.bi-trash-fill').setAttribute('onclick',strFunctionDel);
+    var innerHtml1= template.innerHTML;
+    document.getElementById("cardList").innerHTML+= innerHtml1; 
     template.querySelector("h2").removeChild(cardTitle);
 }
 
-// function for creating heading
-// function temple(name){
-//     this.name=name;
-    
-// }
 function addMasterItem(){
     var listName= document.getElementById("listName").value;
     var blur = document.getElementById("main-page");
