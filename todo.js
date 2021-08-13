@@ -44,6 +44,7 @@ function createCard(name){
     cardIndex+=1;
     template.querySelector('.card').setAttribute('id',deleteID);
     template.querySelector('.bi-trash-fill').setAttribute('onclick',strFunctionDel);
+    document.getElementById(deleteID).classList.remove('invisible');
     var innerHtml1= template.innerHTML;
     document.getElementById("cardList").innerHTML+= innerHtml1; 
     template.querySelector("h2").removeChild(cardTitle);
