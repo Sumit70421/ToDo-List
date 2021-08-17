@@ -1,8 +1,9 @@
 // Index Page 
 
 var masterList= [];
+var item = [];
 var addNewList= document.querySelector("span#addlist")
-var deleteCard = document.querySelector("#delete");
+
 
 // Rendering the First Page 
 function renderPage(){
@@ -17,6 +18,7 @@ function renderPage(){
 addNewList.addEventListener('click', ()=>{
     var blur = document.getElementById("main-page");
     blur.classList.add('blurClass');
+    document.querySelector('#cardList').classList.add('blurClass');
     var popUp = document.getElementById("popUp")
     popUp.style.display="flex";
 })
@@ -26,10 +28,34 @@ function deleteFunction(num){
     if(document.getElementById(del)){
         document.getElementById(del).style.display='none';
     }
-    
-    
+    masterList.pop();
+    renderPage();
 }
 var cardIndex = 1;
+var some; 
+// adding item to given card 
+function addItemFunction(num){
+    let popUpItem = document.getElementById('popUpIn');
+    popUpItem.style.display='flex';
+    some = num;
+}
+
+function addListItem(){
+//        
+
+        let listName = document.getElementById("listNameIn").value;
+        document.getElementById('popUpIn').style.display= 'none';
+        showOnCard(listName);
+        
+}
+function showOnCard(caption){
+    let str = 'delete'+some;
+    let itemLine = document.createElement('p');
+    let mark = document.createElement('span');
+    mark.append(caption);
+    itemLine.appendChild(mark);
+    document.getElementById(str).childNodes[4].appendChild(itemLine); 
+}
 
 // Adding new card and displaying it in the mainlist 
 
@@ -37,13 +63,15 @@ function createCard(name){
     var cardTitle = document.createTextNode(name);
     var template = document.getElementById("cardTemp");
     template.querySelector("h2").appendChild(cardTitle); 
-    var cardID = "card" + cardIndex;
+    // var cardID = "card" + cardIndex;
     var deleteID= "delete"+cardIndex;
     var strFunctionDel = 'deleteFunction('+cardIndex+')';
+    var strFunctionAdd = 'addItemFunction('+cardIndex+')';
     console.log(cardIndex)
     cardIndex+=1;
     template.querySelector('.card').setAttribute('id',deleteID);
     template.querySelector('.bi-trash-fill').setAttribute('onclick',strFunctionDel);
+    template.querySelector('.bi-plus-circle-fill').setAttribute('onclick',strFunctionAdd);
     document.getElementById(deleteID).classList.remove('invisible');
     var innerHtml1= template.innerHTML;
     document.getElementById("cardList").innerHTML+= innerHtml1; 
@@ -54,8 +82,10 @@ function addMasterItem(){
     var listName= document.getElementById("listName").value;
     var blur = document.getElementById("main-page");
     blur.classList.remove('blurClass');
+    document.querySelector('#cardList').classList.remove('blurClass');
     masterList.push(listName);
-    popUp.style.display="none";
+    var popUp = document.getElementById("popUp")
+    popUp.style.display='none';
     createCard(listName) ;
     renderPage();
 }
