@@ -38,7 +38,7 @@ function addItemFunction(num){
     let popUpItem = document.getElementById('popUpIn');
     popUpItem.style.display='flex';
     some = num;
-}
+}                                                                                                                   
 
 function addListItem(){
 //        
@@ -50,11 +50,21 @@ function addListItem(){
 }
 function showOnCard(caption){
     let str = 'delete'+some;
-    let itemLine = document.createElement('p');
+    let itemLine = document.createElement('p'); 
     let mark = document.createElement('span');
-    mark.append(caption);
+    mark.append( " "+"Mark Done")
+    mark.classList.add('strikeThrough');
+    mark.setAttribute('onclick', 'completeTask(event)')
+    itemLine.append(caption);
     itemLine.appendChild(mark);
     document.getElementById(str).childNodes[4].appendChild(itemLine); 
+}
+
+function completeTask(event){
+    let node = event.currentTarget.parentElement;
+    node.classList.add('strike')
+    let btn = event.currentTarget;
+    btn.style.display='none';
 }
 
 // Adding new card and displaying it in the mainlist 

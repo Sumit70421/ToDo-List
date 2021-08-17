@@ -92,6 +92,14 @@ svg{
 .blurClass{
     filter: blur(4px);
 }
+/* for button decoration  */
+.stikeThrough{
+
+}
+
+.strike{
+    text-decoration: line-through;
+}
 
 /* card css */
 .card{
