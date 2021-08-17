@@ -93,8 +93,15 @@ svg{
     filter: blur(4px);
 }
 /* for button decoration  */
-.stikeThrough{
-
+.strikeThrough{
+    font-family: 'Roboto Mono', monospace;
+    border: 1px solid red;
+    border-radius: 30%;
+    background-color: #1d1f1b;
+    font-size: 0.5em;
+    margin-left: 3%;
+    cursor: pointer;
+    padding: 2%;
 }
 
 .strike{
@@ -105,8 +112,7 @@ svg{
 .card{
     position: relative;
     display: inline-block;
-    height: 46vh;
-    
+    height: 49vh;
     width: 18vw;
     border-radius: 9px;
     border: 1px solid red;
@@ -115,8 +121,13 @@ svg{
     padding-top: 1%; 
     margin-top: 3%;
 }
+h2{
+    font-family: 'Poppins', sans-serif;
+}
 .plus{
     height: fit-content;
+    font-size: 1.3em;
+
 }
 .bi-plus-circle-fill{
     height: 11%;
@@ -147,9 +158,66 @@ svg{
     height: 80vh;
     width: 80vw;
     margin: auto;
-    display: flex !important;
+    display: flex ;
     justify-content: space-around;
     align-content: space-between;
     flex-wrap: wrap;
 
+}
+.mobileempty{
+    display: none;
+    color: black;
+}
+ 
+/* Mobile View  */
+
+@media screen and (max-width: 480px) and (min-width: 320px){
+    .allCards{
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    #plusButton{
+        color: rgba(72, 255, 0, 0.919);
+        width: 10%;
+        height: 7%;
+        position: absolute;
+        top: 5%;
+        right: 9%;
+    }
+    .container{
+        margin: auto;
+        margin-top: 0;
+        height: fit-content;
+        width: 92vw;
+    }
+    h1{
+        font-size: 38px;
+    }
+    #addlss{
+        color: black;
+        margin-left: none;
+    }
+    .emptylist{
+        display: none;
+        color: black;
+    }
+    .mobileempty{
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4em;
+        color: white;
+    }
+    .card{
+        height: 49vh;
+        width: 73vw;
+        margin-top: 11%;
+    }
+    .maincon{
+        top: 33%;
+        left: 19%;
+        width: 60vw;
+    }
+    
 }

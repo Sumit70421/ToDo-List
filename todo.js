@@ -9,9 +9,11 @@ var addNewList= document.querySelector("span#addlist")
 function renderPage(){
     if(masterList.length===0){
         document.getElementById("emptyMsg").style.display="block";
+        document.getElementById("mobilemsg").style.display="block";
     }
     else{
         document.getElementById("emptyMsg").style.display="none";
+        document.getElementById("mobilemsg").style.display="none";
     }
 }
 // adding new list 
@@ -37,6 +39,9 @@ var some;
 function addItemFunction(num){
     let popUpItem = document.getElementById('popUpIn');
     popUpItem.style.display='flex';
+    var blur = document.getElementById("main-page");
+    blur.classList.add('blurClass');
+    document.querySelector('#cardList').classList.add('blurClass');
     some = num;
 }                                                                                                                   
 
@@ -46,13 +51,16 @@ function addListItem(){
         let listName = document.getElementById("listNameIn").value;
         document.getElementById('popUpIn').style.display= 'none';
         showOnCard(listName);
+        var blur = document.getElementById("main-page");
+        blur.classList.remove('blurClass');
+        document.querySelector('#cardList').classList.remove('blurClass');
         
 }
 function showOnCard(caption){
     let str = 'delete'+some;
     let itemLine = document.createElement('p'); 
     let mark = document.createElement('span');
-    mark.append( " "+"Mark Done")
+    mark.append( " "+"Mark")
     mark.classList.add('strikeThrough');
     mark.setAttribute('onclick', 'completeTask(event)')
     itemLine.append(caption);
